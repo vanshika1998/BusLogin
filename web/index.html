@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Bus Management System</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+    </head>
+    <body>
+        <h1> Bus Management System </h1>
+        <div class="main">
+            <div class="left"></div>
+            <div class="form">
+               <form name="myForm" action = "#" method = "get" onsubmit="return myValidation()">
+                   <legend><h2> Login Form </h2></legend>
+                  <p> Username : </p>
+                  <input type = "text" name = "user" placeholder = "Username" >
+                  <p> Password : </p>
+                  <input type = "password" name = "pass" placeholder = "Password">
+                  <p> Account: </p>
+                  <select name="account" >
+                  <option value=""> --select!-- </option>
+                  <option value="student/staff">Student / Faculty</option>
+                  <option value="admin">Admin</option>
+                  <option value="staff">Staff</option>
+                  </select><br><br>
+                  <input type = "submit" value = "Submit" class = "submit">
+               </form>
+            </div>
+     </div> 
+     <script>
+            function myValidation()
+            {
+            	var user = document.forms["myForm"]["user"].value;
+            	var pass = document.forms["myForm"]["pass"].value;
+            	var acc = document.forms["myForm"]["account"].value;
+            	var flag = true;
+
+                if(user == "")
+                {
+                	alert("Username cant be empty");
+                	flag = false;
+                }
+                if(pass == "")
+                {
+                	alert("Password cant be empty");
+                	flag = false;
+                }
+                if(acc=="")         
+                {
+                	alert("Please select a option");
+                	flag = false;
+                }
+                return flag;
+            }
+     </script>
+    </body>
+</html>
